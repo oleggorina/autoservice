@@ -1,0 +1,16 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__links {
+    display: flex;
+    gap: $gap;
+    align-items: center;
+  }
+}

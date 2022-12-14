@@ -3,6 +3,8 @@
 @use "mixins-media" as *;
 @use "skin" as *;
 
-.container {
-  @extend %container;
+.logo {
+  font-family: $font-header;
+  font-size: 1.5em;
+  font-weight: 500;
 }

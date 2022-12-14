@@ -1,0 +1,19 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.sign {
+  &__button {
+    background-color: $color-light;
+    color: black;
+    font-family: $font-header;
+    font-weight: 500;
+    padding: calc($gap / 4) calc($gap / 2);
+    border-radius: 50px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    font-size: 1.125em;
+    letter-spacing: 1px;
+  }
+}

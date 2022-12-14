@@ -1,0 +1,14 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.contacts {
+  font-family: $font-header;
+  color: $color-light;
+  opacity: 0.7;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
