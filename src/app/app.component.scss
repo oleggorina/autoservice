@@ -5,4 +5,7 @@
 
 .container {
   @extend %container;
+  &__router {
+    height: calc(1vh - 200px);
+  }
 }

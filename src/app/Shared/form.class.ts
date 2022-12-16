@@ -1,10 +1,10 @@
-export class Header {
+export class General{
   controls: any;
   constructor (
     public id: number,
     public name: string,
     public surname: string,
-    public telephone: string,
+    public phone: string,
     public email: string
   ) {}
 }

@@ -8,3 +8,21 @@
   padding-right: $gap;
   padding-left: $gap;
 }
+
+%row {
+  display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(-.5 * 1.5rem);
+    margin-left: calc(-.5*1.5rem);
+    & > * {
+      width: 100%;
+      max-width: 100%;
+      padding-right: calc(1.5rem * .5);
+      padding-left: calc(1.5rem * .5);
+    }
+}
+
+%col {
+  flex: 1 0 0%;
+    gap: $gap;
+}

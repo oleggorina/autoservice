@@ -1,0 +1,28 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.signForm {
+  display: flex;
+  margin: $gap;
+  flex-direction: column;
+  .row {
+    @extend %row;
+  }
+
+  .col {
+    @extend %col;
+  }
+
+  &__header {
+    font-family: $font-main;
+    text-align: center;
+    font-weight: 700;
+  }
+  &__buttons {
+    display: flex;
+    gap: $gap;
+    justify-content: center;
+  }
+}

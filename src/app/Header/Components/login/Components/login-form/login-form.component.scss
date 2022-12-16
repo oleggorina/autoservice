@@ -1,0 +1,26 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.loginForm {
+  display: flex;
+    flex-direction: column;
+    margin: $gap;
+  &__header {
+    text-align: center;
+  }
+  &__form {
+    .row {
+      @extend %row;
+    }
+    .col {
+      @extend %col;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: $gap;
+  }
+}

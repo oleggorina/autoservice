@@ -1,0 +1,15 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.generalForm {
+  display: flex;
+  flex-direction: column;
+  .row {
+    @extend %row;
+  }
+  .col {
+    @extend %col
+  }
+}

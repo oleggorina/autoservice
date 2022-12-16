@@ -1,0 +1,23 @@
+<div class="loginForm">
+  <h3 class="loginForm__header">Login</h3>
+  <form class="loginForm__form" [formGroup]="formLogin">
+    <div class="col">
+      <div class="row">
+        <mat-form-field appearance="fill">
+          <mat-label>Login</mat-label>
+          <input matInput placeholder="Login" formControlName="login">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+  <div class="loginForm__buttons">
+    <button mat-raised-button color="accent" type="submit">Log-in</button>
+    <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
+  </div>
+</div>

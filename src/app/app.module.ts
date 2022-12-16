@@ -13,6 +13,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { NavbarComponent } from './Navbar/navbar/navbar.component';
+import { GeneralFormComponent } from './Components/Form/general-form/general-form.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SignFormComponent } from './Header/Components/sign-up/Components/sign-form/sign-form.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { LoginFormComponent } from './Header/Components/login/Components/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +30,21 @@ import { NavbarComponent } from './Navbar/navbar/navbar.component';
     LoginComponent,
     ContactComponent,
     SocialComponent,
-    NavbarComponent
+    NavbarComponent,
+    GeneralFormComponent,
+    SignFormComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

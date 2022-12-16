@@ -1,0 +1,32 @@
+<div class="signForm">
+  <h3 class="signForm__header">Maintenance record</h3>
+  <form (ngSubmit)="onSubmit()">
+    <app-general-form [header]="formSign" [generalGroup]="formSign"></app-general-form>
+    <div [formGroup]="formSign">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Car</mat-label>
+            <input matInput placeholder="Model" formControlName="model">
+          </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Year</mat-label>
+              <input matInput placeholder="Year" formControlName="year">
+            </mat-form-field>
+          </div>
+        </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Cause</mat-label>
+          <input matInput placeholder="Cause" formControlName="cause">
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+  <div class="signForm__buttons">
+    <button mat-raised-button color="accent" type="submit">Send</button>
+    <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
+  </div>
+</div>

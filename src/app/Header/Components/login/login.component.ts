@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginFormComponent } from './Components/login-form/login-form.component';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  constructor(private matDialog: MatDialog) {}
 
+  openDialog(): void {
+    this.matDialog.open(LoginFormComponent, {
+      disableClose: true
+    })
+  }
 }
