@@ -5,7 +5,12 @@
 
 .container {
   @extend %container;
-  &__router {
-    height: calc(1vh - 200px);
+  display: grid;
+  grid-template-areas: "header" "router" "navbar";
+  &__header {
+    grid-area: header;
+  }
+  &__navbar {
+    grid-area: navbar;
   }
 }

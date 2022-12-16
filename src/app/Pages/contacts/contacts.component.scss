@@ -3,8 +3,6 @@
 @use "mixins-media" as *;
 @use "skin" as *;
 
-.navbar {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.contacts {
+  display: grid;
 }

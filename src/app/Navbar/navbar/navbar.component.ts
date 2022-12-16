@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from 'src/app/Pages/home/home.component';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-
+  links = [
+    {path: 'home', label: 'Home'},
+    {path: 'services', label: 'Services'},
+    {path: 'gallery', label: 'Gallery'},
+    {path: 'reviews', label: 'Reviews'},
+    {path: 'blog', label: 'Blog'}
+  ];
+  activeLink = this.links[0];
 }

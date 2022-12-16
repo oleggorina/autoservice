@@ -20,6 +20,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SignFormComponent } from './Header/Components/sign-up/Components/sign-form/sign-form.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LoginFormComponent } from './Header/Components/login/Components/login-form/login-form.component';
+import { ContactsComponent } from './Pages/contacts/contacts.component';
+import { HomeComponent } from './Pages/home/home.component';
+import { GalleryComponent } from './Pages/gallery/gallery.component';
+import { ReviewsComponent } from './Pages/reviews/reviews.component';
+import { BlogComponent } from './Pages/blog/blog.component';
+import { ServicesComponent } from './Pages/services/services.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -33,7 +40,13 @@ import { LoginFormComponent } from './Header/Components/login/Components/login-f
     NavbarComponent,
     GeneralFormComponent,
     SignFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    ContactsComponent,
+    HomeComponent,
+    GalleryComponent,
+    ReviewsComponent,
+    BlogComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +57,8 @@ import { LoginFormComponent } from './Header/Components/login/Components/login-f
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
