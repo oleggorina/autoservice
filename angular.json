@@ -32,7 +32,8 @@
             "styles": [
               "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss",
-              "src/_theme.scss"
+              "src/_theme.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [

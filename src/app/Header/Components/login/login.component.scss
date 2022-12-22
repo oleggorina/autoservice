@@ -12,5 +12,6 @@
   cursor: pointer;
   &:hover {
     opacity: 1;
+    color: $color-accent;
   }
 }

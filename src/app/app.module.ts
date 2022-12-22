@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,6 @@ import { LogoComponent } from './Header/Components/logo/logo.component';
 import { SignUpComponent } from './Header/Components/sign-up/sign-up.component';
 import { LoginComponent } from './Header/Components/login/login.component';
 import { ContactComponent } from './Header/Components/contact/contact.component';
-import { SocialComponent } from './Header/Components/social/social.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -27,6 +27,10 @@ import { ReviewsComponent } from './Pages/reviews/reviews.component';
 import { BlogComponent } from './Pages/blog/blog.component';
 import { ServicesComponent } from './Pages/services/services.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { ImageComponent } from './Pages/home/Components/image/image.component';
+import { ScheduleComponent } from './Pages/home/Components/schedule/schedule.component';
+import { SocialComponent } from './Components/social/social.component';
+import { TitleComponent } from './Pages/home/Components/title/title.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,6 @@ import {MatTabsModule} from '@angular/material/tabs';
     SignUpComponent,
     LoginComponent,
     ContactComponent,
-    SocialComponent,
     NavbarComponent,
     GeneralFormComponent,
     SignFormComponent,
@@ -46,11 +49,16 @@ import {MatTabsModule} from '@angular/material/tabs';
     GalleryComponent,
     ReviewsComponent,
     BlogComponent,
-    ServicesComponent
+    ServicesComponent,
+    ImageComponent,
+    ScheduleComponent,
+    SocialComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,

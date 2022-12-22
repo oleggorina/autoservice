@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div class="home">
+  <div class="home__container">
+    <div class="home__container-title"><app-title></app-title></div>
+    <div class="home__container-image"><app-image></app-image></div>
+    <div class="home__container-socials">
+      <app-social [socialClass]="'fab fa-facebook-f'" [socialIconClass]="'social__facebook'" [socialName]="'Facebook'"></app-social>
+      <app-social [socialClass]="'fab fa-instagram'" [socialIconClass]="'social__instagram'" [socialName]="'Instagram'"></app-social>
+      <app-social [socialClass]="'fab fa-youtube'" [socialIconClass]="'social__youtube'" [socialName]="'Youtube'"></app-social>
+    </div>
+    <div class="home__container-schedule"><app-schedule></app-schedule></div>
+  </div>
+</div>

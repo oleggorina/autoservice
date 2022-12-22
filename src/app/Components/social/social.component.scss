@@ -1,0 +1,132 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.social {
+  margin-top: calc($gap * 2);
+  margin-bottom: calc($gap * 2);
+  @include sm {
+    margin-top: calc($gap / 2);
+    // margin-bottom: $gap/2;
+  }
+  &__icon {
+    margin: 0 $gap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    @include sm {
+      margin: 0 calc($gap / 2);
+    }
+    span {
+      position: relative;
+      z-index: 2;
+      width: $gap * 3;
+      height: $gap * 3;
+      background: $color-light;
+      text-align: center;
+      display: block;
+      border-radius: 50%;
+      @include sm {
+        width: calc($gap * 2);
+        height: calc($gap * 2);
+      }
+      i {
+        font-size: calc($gap * 2);
+        color: $color-primary;
+        line-height: calc($gap * 3);
+        @include sm {
+          font-size: $gap;
+          line-height: calc($gap * 2);
+        }
+      }
+    }
+    &:hover {
+      .social__tooltip {
+        bottom: -($gap * 2.5);
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+  &__tooltip {
+    position: absolute;
+    bottom: 0;
+    background-color: $color-light;
+    color: $color-primary;
+    font-size: $gap;
+    padding: 10px 18px;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    @include sm {
+      font-size: 1em;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      background: $color-light;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      @include sm {
+        height: 10px;
+        width: 10px;
+      }
+    }
+  }
+  &__facebook {
+    &:hover {
+      span,
+      .social__tooltip,
+      .social__tooltip::before {
+        background: $color-social-fb;
+        color: $color-light;
+      }
+      span {
+        i {
+          color: $color-light;
+        }
+      }
+    }
+  }
+  &__instagram {
+    &:hover {
+      span,
+      .social__tooltip,
+      .social__tooltip::before {
+        background: $color-social-inst;
+        color: $color-light;
+      }
+      span {
+        i {
+          color: $color-light;
+        }
+      }
+    }
+  }
+  &__youtube {
+    &:hover {
+      span,
+      .social__tooltip,
+      .social__tooltip::before {
+        background: $color-social-yt;
+        color: $color-light;
+      }
+      span {
+        i {
+          color: $color-light;
+        }
+      }
+    }
+  }
+}

@@ -12,7 +12,8 @@ export class NavbarComponent {
     {path: 'services', label: 'Services'},
     {path: 'gallery', label: 'Gallery'},
     {path: 'reviews', label: 'Reviews'},
-    {path: 'blog', label: 'Blog'}
+    {path: 'blog', label: 'Blog'},
+    {path: 'contacts', label: 'Contacts'}
   ];
   activeLink = this.links[0];
 }
