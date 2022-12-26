@@ -1,12 +1,12 @@
 <div class="home">
   <div class="home__container">
     <div class="home__container-title"><app-title></app-title></div>
-    <div class="home__container-image"><app-image></app-image></div>
-    <div class="home__container-socials">
-      <app-social [socialClass]="'fab fa-facebook-f'" [socialIconClass]="'social__facebook'" [socialName]="'Facebook'"></app-social>
-      <app-social [socialClass]="'fab fa-instagram'" [socialIconClass]="'social__instagram'" [socialName]="'Instagram'"></app-social>
-      <app-social [socialClass]="'fab fa-youtube'" [socialIconClass]="'social__youtube'" [socialName]="'Youtube'"></app-social>
+    <div class="home__container-image" #image><app-image></app-image></div>
+    <div class="home__container-social">
+      <div class="home__container-social--item" #social1><app-social [socialClass]="'fab fa-facebook-f'" [socialIconClass]="'social__facebook'" [socialName]="'Facebook'"></app-social></div>
+      <div class="home__container-social--item" #social2><app-social [socialClass]="'fab fa-instagram'" [socialIconClass]="'social__instagram'" [socialName]="'Instagram'"></app-social></div>
+      <div class="home__container-social--item" #social3><app-social [socialClass]="'fab fa-youtube'" [socialIconClass]="'social__youtube'" [socialName]="'Youtube'"></app-social></div>
     </div>
-    <div class="home__container-schedule"><app-schedule></app-schedule></div>
+    <div class="home__container-schedule" #schedule><app-schedule></app-schedule></div>
   </div>
 </div>

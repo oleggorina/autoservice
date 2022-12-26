@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { HomeComponent } from 'src/app/Pages/home/home.component';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   links = [
     {path: 'home', label: 'Home'},
     {path: 'services', label: 'Services'},
@@ -16,4 +16,23 @@ export class NavbarComponent {
     {path: 'contacts', label: 'Contacts'}
   ];
   activeLink = this.links[0];
+  currentRoute = '';
+
+  @ViewChild('navbar', {static: true}) navbar!: ElementRef<HTMLDivElement>
+
+  constructor() {
+  }
+  
+  ngOnInit(): void {
+    this.navbarAnimation();
+  }
+  
+  navbarAnimation(): void {
+    gsap.from(this.navbar.nativeElement.children, {
+      duration: 0.8,
+      opacity: 0,
+      y: 20,
+      stagger: 0.5
+    })
+  }
 }

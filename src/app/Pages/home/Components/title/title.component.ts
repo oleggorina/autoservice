@@ -34,6 +34,7 @@ export class TitleComponent implements OnInit {
       this.index++;
       if (this.index != this.arrLength) {
         this.arrLength = this.textArray[this.index].length;
+        console.log(this.arrLength);
         setTimeout(() => {
           this.typeWriter()
         }, this.delay);
