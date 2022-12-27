@@ -1,0 +1,14 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 148px);
+  font-family: $font-header;
+  font-size: 5em;
+  opacity: 0.7;
+}

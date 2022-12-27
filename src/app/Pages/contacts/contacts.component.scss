@@ -4,5 +4,11 @@
 @use "skin" as *;
 
 .contacts {
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 148px);
+  font-family: $font-header;
+  font-size: 5em;
+  opacity: 0.7;
 }

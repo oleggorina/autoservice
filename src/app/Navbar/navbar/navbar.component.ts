@@ -16,9 +16,10 @@ export class NavbarComponent implements OnInit {
     {path: 'contacts', label: 'Contacts'}
   ];
   activeLink = this.links[0];
-  windowWidth: any = 0;
+  windowWidth: any = window.innerWidth;
 
-  @ViewChild('navbar', {static: true}) navbar!: ElementRef<HTMLDivElement>;
+  @ViewChild('navbar', {static: true}) navbar!: ElementRef<HTMLCollection>;
+  
   constructor() {
   }
   
@@ -27,7 +28,7 @@ export class NavbarComponent implements OnInit {
   }
   
   navbarAnimation(): void {
-    gsap.from(this.navbar.nativeElement.children, {
+    gsap.from(this.navbar.nativeElement, {
       duration: 0.8,
       opacity: 0,
       y: 20,

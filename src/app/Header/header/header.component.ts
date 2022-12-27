@@ -9,7 +9,7 @@ import { gsap } from 'gsap';
 export class HeaderComponent implements OnInit {
 
   @ViewChild('header', {static: true}) header!: ElementRef<HTMLDivElement>;
-  windowWidth: any = 0;
+  windowWidth: number = window.innerWidth;
 
   ngOnInit(): void {
     this.navAnimation();
