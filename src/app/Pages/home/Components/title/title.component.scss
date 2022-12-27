@@ -6,7 +6,7 @@
 .home {
   &__title {
     display: flex;
-    @include lg {
+    @include md {
       text-align: center;
     }
     h1 {
@@ -41,7 +41,7 @@
         line-height: 2rem;
       }
       @include sm {
-        font-size: 0.7rem;
+        font-size: 1em;
         line-height: 1.35rem;
       }
     }  

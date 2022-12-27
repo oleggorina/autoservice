@@ -31,6 +31,7 @@ import { ImageComponent } from './Pages/home/Components/image/image.component';
 import { ScheduleComponent } from './Pages/home/Components/schedule/schedule.component';
 import { SocialComponent } from './Components/social/social.component';
 import { TitleComponent } from './Pages/home/Components/title/title.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { TitleComponent } from './Pages/home/Components/title/title.component';
     MatInputModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

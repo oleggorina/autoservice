@@ -1,0 +1,17 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.image {
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    @include md {
+      width: 350px;
+    }
+    @include sm {
+      width: 250px;
+    }
+  }
+}

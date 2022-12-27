@@ -8,4 +8,7 @@
   font-size: 1.5em;
   font-weight: 500;
   cursor: pointer;
+  @include sm {
+    font-size: 1.125em;
+  }
 }

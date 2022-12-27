@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 
 @Component({
@@ -16,10 +16,9 @@ export class NavbarComponent implements OnInit {
     {path: 'contacts', label: 'Contacts'}
   ];
   activeLink = this.links[0];
-  currentRoute = '';
+  windowWidth: any = 0;
 
-  @ViewChild('navbar', {static: true}) navbar!: ElementRef<HTMLDivElement>
-
+  @ViewChild('navbar', {static: true}) navbar!: ElementRef<HTMLDivElement>;
   constructor() {
   }
   
@@ -33,6 +32,11 @@ export class NavbarComponent implements OnInit {
       opacity: 0,
       y: 20,
       stagger: 0.5
-    })
+    });
+  }
+
+  @HostListener('window: resize', ['$event'])
+  onResize() {
+    this.windowWidth = window.innerWidth;
   }
 }

@@ -4,7 +4,7 @@
   </div>
   <div class="header__links">
     <div class="header__links-item"><app-sign-up></app-sign-up></div>
-    <div class="header__links-item">
+    <div class="header__links-item" *ngIf="windowWidth > 576">
       <div class="phone">+373-61-058-315</div>
     </div>
     <div class="header__links-item"><app-login></app-login></div>

@@ -4,12 +4,12 @@
 @use "skin" as *;
 
 .social {
-  margin-top: calc($gap * 2);
-  margin-bottom: calc($gap * 2);
-  @include sm {
-    margin-top: calc($gap / 2);
-    // margin-bottom: $gap/2;
-  }
+  // margin-top: calc($gap * 2);
+  // margin-bottom: calc($gap * 2);
+  // @include sm {
+  //   margin-top: calc($gap / 2);
+  //   // margin-bottom: $gap/2;
+  // }
   &__icon {
     margin: 0 $gap;
     display: flex;
