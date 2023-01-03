@@ -1,3 +1,12 @@
 <div class="services">
-  Coming soon
+  <div class="services__controls"></div>
+  <div class="services__slider">
+    <app-card-slider [template]="servicesTemplate" [data]="cardData"></app-card-slider>
+  </div>
 </div>
+
+<ng-template #servicesTemplate>
+  <div class="slider__cards-item" *ngFor="let data of cardData">
+    <app-card [cardTitle]="data.title" [cardImage]="data.image" [cardText]="data.text"></app-card>
+  </div>
+</ng-template>

@@ -1,0 +1,43 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 600px;
+  margin: 0;
+  @include ul-min {
+    width: 1880px;
+  }
+  // @include ul-xl {
+  //   width: 1160px;
+  // }
+  // @include xl-lg {
+  //   width: 960px;
+  // }
+  // @include lg-md {
+  //   width: 640px;
+  // }
+  // @include md-sm {
+  //   width: 320px;
+  // }
+  // @include sm {
+  //   width: 270px;
+  //   height: 400px;
+  // }
+  &__cards {
+    position: absolute;
+    display: flex;
+    transition: all 1s ease;
+    align-items: center;
+    max-width: 100%;
+    height: 100%;
+    @include ul-min {
+      gap: $gap * 4.75;
+    }
+  }
+}

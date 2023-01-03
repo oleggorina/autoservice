@@ -32,6 +32,10 @@ import { ScheduleComponent } from './Pages/home/Components/schedule/schedule.com
 import { SocialComponent } from './Components/social/social.component';
 import { TitleComponent } from './Pages/home/Components/title/title.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
+import { CardSliderComponent } from './Components/card-slider/card-slider.component';
+import { SliderControlComponent } from './Components/slider-control/slider-control.component';
+import { CardComponent } from './Components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,10 @@ import {MatMenuModule} from '@angular/material/menu';
     ImageComponent,
     ScheduleComponent,
     SocialComponent,
-    TitleComponent
+    TitleComponent,
+    CardSliderComponent,
+    SliderControlComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +75,8 @@ import {MatMenuModule} from '@angular/material/menu';
     ReactiveFormsModule,
     MatDialogModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
