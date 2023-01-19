@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Input, Renderer2, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, TemplateRef, ViewChild } from '@angular/core';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-card-slider',
@@ -9,29 +10,28 @@ export class CardSliderComponent implements AfterViewInit {
   @Input() data: any = '';
   @Input() template!: TemplateRef<any>;
   @ViewChild('cardsContainer') cardsContainer!: ElementRef;
-  containerWidth: number = 0;
-  cardStyle: any = 0;
-  cardMargin: any = 0;
+  slideCount: any = 0;
+  itemLeft: any = 0;
+  inc: number = 0;
+  containerWidth: any = 0;
   cardCount: any = 0;
   cardsPerSlide: number = 4;
   offset: number = 0;
-  maxX: number = 0;
   width: number = 0;
 
   constructor(private renderer: Renderer2){}
-
+  
   ngAfterViewInit(): void {
     this.sliderInit();
+    this.cardsAnimation();
+    console.log(this.cardsContainer.nativeElement.children)
   }
 
   sliderInit(): void {
     this.containerWidth = this.cardsContainer.nativeElement.offsetWidth;
-    this.cardStyle = this.cardsContainer.nativeElement.currentStyle || window.getComputedStyle(this.cardsContainer.nativeElement);
-    this.cardMargin = Number(this.cardStyle.gap.match(/\d+/g)[0]);
     this.cardCount = this.data.length;
-    const x = Math.ceil(this.cardCount / this.cardsPerSlide);
-    this.maxX = -(x * this.containerWidth + (this.cardMargin * (this.cardCount / this.cardsPerSlide)) - this.containerWidth - this.cardMargin);
-
+    this.itemLeft = this.cardCount % this.cardsPerSlide;
+    this.slideCount = Math.floor(this.cardCount / this.cardsPerSlide) - 1;
   }
 
   setCardsPerSlide(): void {
@@ -44,16 +44,37 @@ export class CardSliderComponent implements AfterViewInit {
   }
 
   next(): void {
-    if (this.offset != this.maxX) {
-      this.offset -= this.containerWidth + this.cardMargin;
+    if (this.inc !== this.slideCount + this.itemLeft) {
+      if (this.inc === this.slideCount) {
+        this.inc = this.inc + this.itemLeft;
+        this.offset = this.offset - (this.containerWidth / this.cardsPerSlide) * this.itemLeft;
+      } else {
+        this.inc ++;
+        this.offset = this.offset - this.containerWidth;
+      }
       this.renderer.setStyle(this.cardsContainer.nativeElement, 'transform', `translateX(${this.offset}px)`);
     }
   }
 
   prev (): void {
-    if (this.offset != 0) {
-      this.offset += this.containerWidth + this.cardMargin;
+    if (this.inc !== 0) {
+      if (this.inc === this.itemLeft) {
+        this.inc = this.inc - this.itemLeft;
+        this.offset = this.offset + (this.containerWidth / this.cardsPerSlide) * this.itemLeft;
+      } else {
+        this.inc --;
+        this.offset = this.offset + this.containerWidth;
+      }
       this.renderer.setStyle(this.cardsContainer.nativeElement, 'transform', `translateX(${this.offset}px)`);
     }
+  }
+
+  cardsAnimation(): void {
+    gsap.from(this.cardsContainer.nativeElement.children, {
+      duration: 0.3,
+      opacity: 0,
+      y: -20,
+      stagger: 0.4
+    });
   }
 }

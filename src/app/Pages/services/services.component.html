@@ -1,5 +1,12 @@
 <div class="services">
-  <div class="services__controls"></div>
+  <div class="services__controls">
+    <div class="services__controls-item" #sliderControlPrev>
+      <app-slider-control [buttonText]="'<'" (click)="prev()"></app-slider-control>
+    </div>
+    <div class="services__controls-item" #sliderControlNext>
+      <app-slider-control [buttonText]="'>'" (click)="next()"></app-slider-control>
+    </div>
+  </div>
   <div class="services__slider">
     <app-card-slider [template]="servicesTemplate" [data]="cardData"></app-card-slider>
   </div>

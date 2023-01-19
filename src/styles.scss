@@ -17,6 +17,8 @@ body {
   background-image: radial-gradient(circle, #303030, #2d2d2d, #2a2a2a, #272727, #242424, #212121, #1d1d1d, #1a1a1a, #151515, #101010, #080808, #000000);
   font-size: $font-size;
   color: $color-light;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 h1, p {

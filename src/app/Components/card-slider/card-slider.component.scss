@@ -8,10 +8,10 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  height: 600px;
+  height: 500px;
   margin: 0;
   @include ul-min {
-    width: 1880px;
+    width: 1400px;
   }
   // @include ul-xl {
   //   width: 1160px;
@@ -34,10 +34,11 @@
     display: flex;
     transition: all 1s ease;
     align-items: center;
+    justify-content: flex-start;
     max-width: 100%;
     height: 100%;
-    @include ul-min {
-      gap: $gap * 4.75;
-    }
+    // @include ul-min {
+    //   gap: $gap * 2;
+    // }
   }
 }
