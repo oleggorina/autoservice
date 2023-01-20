@@ -13,22 +13,21 @@
   @include ul-min {
     width: 1400px;
   }
-  // @include ul-xl {
-  //   width: 1160px;
-  // }
-  // @include xl-lg {
-  //   width: 960px;
-  // }
-  // @include lg-md {
-  //   width: 640px;
-  // }
-  // @include md-sm {
-  //   width: 320px;
-  // }
-  // @include sm {
-  //   width: 270px;
-  //   height: 400px;
-  // }
+  @include ul-xl {
+    width: 1050px;
+  }
+  @include xl-lg {
+    width: 700px;
+  }
+  @include lg-md {
+    width: 700px;
+  }
+  @include md-sm {
+    width: 350px;
+  }
+  @include sm {
+    width: 270px;
+  }
   &__cards {
     position: absolute;
     display: flex;
@@ -37,8 +36,5 @@
     justify-content: flex-start;
     max-width: 100%;
     height: 100%;
-    // @include ul-min {
-    //   gap: $gap * 2;
-    // }
   }
 }

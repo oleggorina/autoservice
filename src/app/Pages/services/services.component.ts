@@ -32,7 +32,7 @@ export class ServicesComponent implements AfterViewInit {
   prevAnimation(): void {
     gsap.from(this.controlPrev.nativeElement, {
       duration: 0.5,
-      delay: 1.5,
+      delay: 1.3,
       opacity: 0,
       x: -20
     });
@@ -41,7 +41,7 @@ export class ServicesComponent implements AfterViewInit {
   nextAnimation(): void {
     gsap.from(this.controlNext.nativeElement, {
       duration: 0.3,
-      delay: 1.5,
+      delay: 1.3,
       opacity: 0,
       x: 20
     });

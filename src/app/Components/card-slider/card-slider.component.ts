@@ -22,9 +22,9 @@ export class CardSliderComponent implements AfterViewInit {
   constructor(private renderer: Renderer2){}
   
   ngAfterViewInit(): void {
+    this.setCardsPerSlide();
     this.sliderInit();
     this.cardsAnimation();
-    console.log(this.cardsContainer.nativeElement.children)
   }
 
   sliderInit(): void {
@@ -36,11 +36,11 @@ export class CardSliderComponent implements AfterViewInit {
 
   setCardsPerSlide(): void {
     this.width = window.innerWidth;
-    if (this.width < 992) {
+    if (this.width < 1400 && this.width >= 1200) {
+      this.cardsPerSlide = 3;
+    } if (this.width < 1200 && this.width >= 768) {
       this.cardsPerSlide = 2;
-    } if (this.width < 768) {
-      this.cardsPerSlide = 1;
-    }
+    } if (this.width < 768) this.cardsPerSlide = 1;
   }
 
   next(): void {
@@ -74,7 +74,7 @@ export class CardSliderComponent implements AfterViewInit {
       duration: 0.3,
       opacity: 0,
       y: -20,
-      stagger: 0.4
+      stagger: 0.3
     });
   }
 }
