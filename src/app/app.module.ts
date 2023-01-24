@@ -36,6 +36,7 @@ import {MatCardModule} from '@angular/material/card';
 import { CardSliderComponent } from './Components/card-slider/card-slider.component';
 import { SliderControlComponent } from './Components/slider-control/slider-control.component';
 import { CardComponent } from './Components/card/card.component';
+import { CardReviewComponent } from './Components/card-review/card-review.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { CardComponent } from './Components/card/card.component';
     TitleComponent,
     CardSliderComponent,
     SliderControlComponent,
-    CardComponent
+    CardComponent,
+    CardReviewComponent
   ],
   imports: [
     BrowserModule,

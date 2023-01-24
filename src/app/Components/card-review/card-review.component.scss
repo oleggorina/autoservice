@@ -1,0 +1,34 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.card {
+  display: grid;
+  gap: $gap;
+  margin: 0 calc($gap * 0.75);
+  width: 320px;
+  height: 250px;
+  @include sm  {
+    width: 250px;
+    margin: 0 calc($gap * 0.5);
+  }
+  &__image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  &__content {
+    font-family: $font-main;
+    z-index: 1;
+    @include sm {
+      font-size: 0.85em;
+    }
+  }
+  &__stars {
+    justify-self: center;
+    color: $color-accent;
+    @include sm {
+      font-size: 0.85em;
+    }
+  }
+}

@@ -1,3 +1,19 @@
 <div class="reviews">
-  Coming soon
+  <div class="reviews__controls">
+    <div class="reviews__controls-item" #sliderControlPrev>
+      <app-slider-control [buttonText]="'<'" (click)="prev()"></app-slider-control>
+    </div>
+    <div class="reviews__controls-item" #sliderControlNext>
+      <app-slider-control [buttonText]="'>'" (click)="next()"></app-slider-control>
+    </div>
+  </div>
+  <div class="reviews__slider">
+    <app-card-slider [template]="servicesTemplate" [data]="cardData"></app-card-slider>
+  </div>
 </div>
+
+<ng-template #servicesTemplate>
+  <div class="slider__cards-item" *ngFor="let data of cardData">
+    <app-card-review [cardTitle]="data.title" [cardImage]="data.image" [cardText]="data.text"></app-card-review>
+  </div>
+</ng-template>
