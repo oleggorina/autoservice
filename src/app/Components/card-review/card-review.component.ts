@@ -6,7 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card-review.component.scss']
 })
 export class CardReviewComponent {
-  @Input() cardTitle: string = '';
+  @Input() cardName: string = '';
   @Input() cardImage: string = '';
+  @Input() cardModel: string = '';
   @Input() cardText: string = '';
 }

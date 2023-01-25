@@ -14,6 +14,6 @@
 
 <ng-template #servicesTemplate>
   <div class="slider__cards-item" *ngFor="let data of cardData">
-    <app-card-review [cardTitle]="data.title" [cardImage]="data.image" [cardText]="data.text"></app-card-review>
+    <app-card-review [cardName]="data.name" [cardImage]="data.image" [cardModel]="data.model" [cardText]="data.text"></app-card-review>
   </div>
 </ng-template>

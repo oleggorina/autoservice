@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router, RouterLinkActive } from '@angular/router';
 import { gsap } from 'gsap';
 
 @Component({
@@ -15,12 +16,12 @@ export class NavbarComponent implements OnInit {
     {path: 'blog', label: 'Blog'},
     {path: 'contacts', label: 'Contacts'}
   ];
-  activeLink = this.links[0];
   windowWidth: any = window.innerWidth;
 
   @ViewChild('navbar', {static: true}) navbar!: ElementRef<HTMLCollection>;
   
   constructor() {
+  
   }
   
   ngOnInit(): void {

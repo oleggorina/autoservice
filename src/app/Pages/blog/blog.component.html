@@ -1,3 +1,19 @@
 <div class="blog">
-  Coming soon
+  <div class="blog__controls">
+    <div class="blog__controls-item" #sliderControlPrev>
+      <app-slider-control [buttonText]="'<'" (click)="prev()"></app-slider-control>
+    </div>
+    <div class="blog__controls-item" #sliderControlNext>
+      <app-slider-control [buttonText]="'>'" (click)="next()"></app-slider-control>
+    </div>
+  </div>
+  <div class="blog__slider">
+    <app-card-slider [template]="servicesTemplate" [data]="cardData"></app-card-slider>
+  </div>
 </div>
+
+<ng-template #servicesTemplate>
+  <div class="slider__cards-item" *ngFor="let data of cardData">
+    <app-card-blog [cardTitle]="data.title" [cardImage]="data.image" [cardText]="data.text"></app-card-blog>
+  </div>
+</ng-template>

@@ -37,6 +37,7 @@ import { CardSliderComponent } from './Components/card-slider/card-slider.compon
 import { SliderControlComponent } from './Components/slider-control/slider-control.component';
 import { CardComponent } from './Components/card/card.component';
 import { CardReviewComponent } from './Components/card-review/card-review.component';
+import { CardBlogComponent } from './Components/card-blog/card-blog.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { CardReviewComponent } from './Components/card-review/card-review.compon
     CardSliderComponent,
     SliderControlComponent,
     CardComponent,
-    CardReviewComponent
+    CardReviewComponent,
+    CardBlogComponent
   ],
   imports: [
     BrowserModule,

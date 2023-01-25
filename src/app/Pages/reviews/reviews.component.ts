@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { CardSliderComponent } from 'src/app/Components/card-slider/card-slider.component';
-import { IServicesCard } from 'src/app/Shared/services-card.class';
-import { SERVICESCARD_DATA } from 'src/app/Shared/services-card.const';
 import { gsap } from 'gsap';
+import { IReviewsCard } from 'src/app/Shared/reviews-card.class';
+import { REVIEWSCARD_DATA } from 'src/app/Shared/reviews-card.const';
 
 @Component({
   selector: 'app-reviews',
@@ -14,7 +14,7 @@ export class ReviewsComponent implements AfterViewInit {
   @ViewChild(CardSliderComponent) cardSlider!: CardSliderComponent;
   @ViewChild('sliderControlPrev') controlPrev!: ElementRef;
   @ViewChild('sliderControlNext') controlNext!: ElementRef;
-  cardData: IServicesCard[] = SERVICESCARD_DATA;
+  cardData: IReviewsCard[] = REVIEWSCARD_DATA;
 
   ngAfterViewInit(): void {
     this.prevAnimation();
