@@ -24,7 +24,7 @@ export class CardBlogComponent implements AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    this.displayText = this.cardText.substring(0, 200) + '...';
+    this.displayText = this.cardText.substring(0, 170) + '...';
   }
 
   openModal(): void {

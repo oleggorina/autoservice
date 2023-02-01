@@ -1,4 +1,27 @@
 <div class="blog">
+  <div class="blog__image">
+    <img src="{{getCurrentSlide()}}" alt="">
+    <div class="blog__indicators">
+      <div class="blog__indicators-item" *ngFor="let indicator of images"></div>
+    </div>
+  </div>
+  <div class="blog__content">
+    <div class="blog__content-title">
+      <h1>{{data.title}}</h1>
+    </div>
+    <div class="blog__content-subtitle">
+      <h2>{{data.subtitle}}</h2>
+    </div>
+    <div class="blog__content-text">
+      <p>{{data.text}}</p>
+    </div>
+    <div class="blog__content-action">
+      <button mat-button mat-dialog-close>Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="blog">
   <div class="blog__content">
     <div class="blog__content-title">
       <h3>{{data.title}}</h3>
@@ -21,4 +44,4 @@
   <div class="blog__action">
     <button mat-button mat-dialog-close>Back</button>
   </div>
-</div>
+</div> -->
