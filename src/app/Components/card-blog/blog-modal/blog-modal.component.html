@@ -1,0 +1,24 @@
+<div class="blog">
+  <div class="blog__content">
+    <div class="blog__content-title">
+      <h3>{{data.title}}</h3>
+    </div>
+    <div class="blog__content-subtitle">
+      <h4>{{data.subtitle}}</h4>
+    </div>
+    <div class="blog__content-text">
+      <p>{{data.text}}</p>
+    </div>
+  </div>
+  <div class="blog__image">
+    <img src="{{data.mainImage}}" alt="">
+  </div>
+  <div class="blog__images">
+    <div class="item" *ngFor="let image of images">
+      <img src="{{image}}" alt="">
+    </div>
+  </div>
+  <div class="blog__action">
+    <button mat-button mat-dialog-close>Back</button>
+  </div>
+</div>

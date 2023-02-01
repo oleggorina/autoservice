@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { CardSliderComponent } from 'src/app/Components/card-slider/card-slider.component';
-import { IServicesCard } from 'src/app/Shared/services-card.class';
-import { SERVICESCARD_DATA } from 'src/app/Shared/services-card.const';
+import { IBlogCard } from 'src/app/Shared/blog-card.class';
+import { BLOGCARD_DATA } from 'src/app/Shared/blog-card.const';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-blog',
@@ -12,7 +13,7 @@ export class BlogComponent implements AfterViewInit {
   @ViewChild(CardSliderComponent) cardSlider!: CardSliderComponent;
   @ViewChild('sliderControlPrev') controlPrev!: ElementRef;
   @ViewChild('sliderControlNext') controlNext!: ElementRef;
-  cardData: IServicesCard[] = SERVICESCARD_DATA;
+  cardData: IBlogCard[] = BLOGCARD_DATA;
 
   ngAfterViewInit(): void {
     this.prevAnimation();

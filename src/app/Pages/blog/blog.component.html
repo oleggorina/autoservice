@@ -8,12 +8,16 @@
     </div>
   </div>
   <div class="blog__slider">
-    <app-card-slider [template]="servicesTemplate" [data]="cardData"></app-card-slider>
+    <app-card-slider [template]="blogTemplate" [data]="cardData"></app-card-slider>
   </div>
 </div>
 
-<ng-template #servicesTemplate>
+<ng-template #blogTemplate>
   <div class="slider__cards-item" *ngFor="let data of cardData">
-    <app-card-blog [cardTitle]="data.title" [cardImage]="data.image" [cardText]="data.text"></app-card-blog>
+    <app-card-blog [cardTitle]="data.title" [cardSubtitle]="data.subtitle" 
+    [cardImage]="data.mainImage" [cardText]="data.text" [cardDate]="data.date"
+    [firstImage]="data.firstImage" [secondImage]="data.secondImage"
+    [thirdImage]="data.thirdImage" [fourthImage]="data.fourthImage" 
+    [fifthImage]="data.fifthImage"></app-card-blog>
   </div>
 </ng-template>
