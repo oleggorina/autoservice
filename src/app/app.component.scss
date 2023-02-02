@@ -6,7 +6,7 @@
 .container {
   @extend %container;
   display: grid;
-  grid-template-areas: "header" "router" "navbar";
+  grid-template-areas: "header" "navbar";
   &__header {
     grid-area: header;
   }

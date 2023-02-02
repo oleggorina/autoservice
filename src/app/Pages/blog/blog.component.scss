@@ -9,6 +9,9 @@
   align-items: center;
   height: calc(100vh - 148px);
   position: relative;
+  @include sm {
+    height: calc(100vh - 98px);
+  }
   &__controls {
     position: absolute;
     width: 100%;

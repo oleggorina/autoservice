@@ -2,7 +2,10 @@
   <div class="blog__image">
     <img src="{{getCurrentSlide()}}" alt="">
     <div class="blog__indicators">
-      <div class="blog__indicators-item" *ngFor="let indicator of images"></div>
+      <div class="blog__indicators-item" #indicator 
+      [ngClass]="{'active': slideIndex === currentIndex}"
+      *ngFor="let indicator of images; let slideIndex = index"
+      (click)="goToSlide(slideIndex)"></div>
     </div>
   </div>
   <div class="blog__content">

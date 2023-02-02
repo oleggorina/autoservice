@@ -1,8 +1,12 @@
 <mat-card class="card">
   <mat-card-header>
     <div mat-card-avatar class="card__image" [ngStyle]="{'background-image': 'url(' + cardImage + ')'}"></div>
-    <mat-card-title>{{cardName}}</mat-card-title>
-    <mat-card-subtitle>{{cardModel}}</mat-card-subtitle>
+    <mat-card-title class="card__tittle">
+      <h1>{{cardName}}</h1>
+    </mat-card-title>
+    <mat-card-subtitle class="card__subtitle">
+      <h2>{{cardModel}}</h2>
+    </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content class="card__content">
     <p>

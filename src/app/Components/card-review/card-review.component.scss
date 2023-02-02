@@ -8,10 +8,26 @@
   gap: $gap;
   margin: 0 calc($gap * 0.75);
   width: 320px;
-  height: 250px;
+  height: 300px;
   @include sm  {
-    width: 250px;
+    width: 200px;
     margin: 0 calc($gap * 0.5);
+  }
+  h1 {
+    font-family: $font-main;
+    font-weight: 500;
+    @include sm {
+      font-size: 0.675em;
+      line-height: 1em;
+    }
+  }
+  h2 {
+    font-family: $font-main;
+    font-weight: 300;
+    @include sm {
+      font-size: 0.675em;
+      line-height: 1em;
+    }
   }
   &__image {
     background-size: cover;
@@ -19,8 +35,10 @@
   &__content {
     font-family: $font-main;
     z-index: 1;
-    @include sm {
-      font-size: 0.85em;
+    p {
+      @include sm {
+        font-size: 0.785em;
+      }
     }
   }
   &__stars {

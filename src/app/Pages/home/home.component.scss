@@ -8,6 +8,9 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 148px);
+  @include sm {
+    height: calc(100vh - 98px);
+  }
   &__container {
     display: grid;
     max-width: 1400px;

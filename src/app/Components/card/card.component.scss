@@ -12,8 +12,10 @@
   text-align: center;
   margin: 0 calc($gap * 0.75);
   @include sm  {
-    grid-template-columns: 250px;
+    grid-template-columns: 200px;
     margin: 0 calc($gap * 0.5);
+    height: 400px;
+    gap: calc($gap / 4);
   }
   &__title {
     grid-area: title;
@@ -22,8 +24,11 @@
   &__image {
     grid-area: image;
     height: 250px;
+    @include xl {
+      height: 210px;
+    }
     @include sm {
-      height: 150px;
+      height: 125px;
     }
     img {
       width: 100%;
@@ -35,7 +40,7 @@
     grid-area: text;
     font-family: $font-main;
     @include sm {
-      font-size: 0.875em;
+      font-size: 0.75em;
     }
   }
 }

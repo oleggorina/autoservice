@@ -10,15 +10,40 @@
   grid-template-areas: "image content";
   gap: $gap;
   overflow: hidden;
+  height: 500px;
+  @include xl {
+    height: 400px;
+  }
+  @include md {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "image" "content";
+    height: 600px;
+  }
+  @include sm {
+    height: 500px;
+  }
 
   &__image {
     grid-area: image;
     position: relative;
+    height: 500px;
+    @include xl {
+      height: 400px;
+    }
+    @include md {
+      height: 300px;
+    }
+    @include sm {
+      height: 200px;
+    }
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
+      transition: 0.5s;
     }
   }
 
@@ -31,11 +56,28 @@
     gap: $gap;
 
     &-item {
-      background-color: #484848;
-      width: 10px;
-      height: 5px;
+      border-radius: 50%;
+      width: 3px;
+      height: 3px;
+      padding: 4px;
+      position: relative;
+      background-color: transparent;
       transition: 0.5s;
       cursor: pointer;
+      &::after {
+        border-radius: 50%;
+        padding: 3px;
+        border: 2px solid #fff;
+        position: absolute;
+        content: "";
+        top: -3px;
+        left: -3px;
+        bottom: -3px;
+        right: -3px;
+      }
+      &.active {
+        background-color: $color-accent
+      }
     }
   }
 
@@ -43,100 +85,42 @@
     grid-area: content;
     text-align: center;
     padding: $gap;
+    @include xl {
+      padding: calc($gap / 2);
+    }
+    &-title {
+      h1 {
+        font-family: $font-header;
+        font-weight: 500;
+        @include xl {
+          font-size: 0.95em;
+        }
+      }
+    }
+    &-subtitle {
+      h2 {
+        font-family: $font-header;
+        font-weight: 300;
+        @include xl {
+          font-size: 0.95em;
+        }
+      }
+    }
+    &-text {
+      @include xl {
+        height: 220px;
+        overflow-y: scroll;
+        margin-bottom: 10px;
+      }
+      @include md {
+        height: 120px;
+      }
+      p {
+        font-family: $font-main;
+        @include xl {
+          font-size: 0.95em;
+        }
+      }
+    }
   }
 }
-
-// .blog {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr 1fr; 
-//   grid-template-rows: 1fr 1fr 1fr 50px;
-//   grid-template-areas: 
-//     "Image Image Content Content"
-//     "Image Image Content Content"
-//     "Images Images Images Images"
-//     "Action Action Action Action";
-//   gap: $gap;
-//   padding: $gap;
-//   overflow: scroll;
-//   @include xl {
-//     grid-template-columns: 1fr 1fr;
-//     grid-template-rows: 1fr 1fr 2fr 50px;
-//   }
-//   @include lg {
-
-//   }
-//   &__content {
-//     grid-area: Content;
-//     text-align: center;
-//     gap: $gap;
-//     width: 400px;
-//     height: max-content;
-//     @include lg {
-//       width: 300px;
-//     }
-//     &-title {
-//       h3 {
-//         font-family: $font-header;
-//         font-weight: 500;
-//       }
-//     }
-//     &-subtitle {
-//       h4 {
-//         font-family: $font-header;
-//         font-weight: 300;
-//       }
-//     }
-//     &-text {
-//       p {
-//         font-family: $font-main;
-//         @include lg {
-//           font-size: 0.875em;
-//         }
-//       }
-//     }
-//   }
-//   &__image {
-//     grid-area: Image;
-//     // height: 100%;
-//     width: 400px;
-//     height: 400px;
-//     @include xl {
-//       width: 300px;
-//       height: 300px;
-//     }
-//     img {
-//       width: 100%;
-//       height: 100%;
-//       object-fit: cover;
-//       border: 5px solid white;
-//     }
-//   }
-//   &__images {
-//     grid-area: Images;
-//     display: grid;
-//     grid-template-columns: repeat(5, 170px);
-//     grid-template-rows: 1fr;
-//     align-self: center;
-//     justify-self: center;
-//     gap: $gap;
-//     @include xl {
-//       grid-template-columns: 1fr 1fr 1fr;
-//       grid-template-rows: 1fr 1fr;
-//     }
-//     .item {
-//       width: 150px;
-//       height: 150px;
-//       margin: 0 10px 0 10px;
-//       border: 5px solid white;
-//       img {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//       }
-//     }
-//   }
-//   &__action {
-//     grid-area: Action;
-//     justify-self: center;
-//   }
-// }

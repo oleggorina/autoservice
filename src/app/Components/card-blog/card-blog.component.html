@@ -1,7 +1,11 @@
 <mat-card class="card">
   <mat-card-header>
-    <mat-card-title class="card__title">{{cardTitle}}</mat-card-title>
-    <mat-card-subtitle class="card__subtitle">{{cardSubtitle}}</mat-card-subtitle>
+    <mat-card-title class="card__title">
+      <h1>{{cardTitle}}</h1>
+    </mat-card-title>
+    <mat-card-subtitle class="card__subtitle">
+      <h2>{{cardSubtitle}}</h2>
+    </mat-card-subtitle>
   </mat-card-header>
   <div class="card__image">
     <img mat-card-image src="{{cardImage}}" alt="Photo of a Shiba Inu">
@@ -15,6 +19,6 @@
   </mat-card-content>
   <mat-card-actions class="card__actions">
     <span class="card__actions-date">{{cardDate}}</span>
-    <button mat-button (click)="openModal()">Read more</button>
+    <button mat-button (click)="openModal()" class="card__actions-btn">Read more</button>
   </mat-card-actions>
 </mat-card>
