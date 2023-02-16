@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent implements OnInit {
-  textArray: string[] = ['Профессиональное техническое обслуживание',
-  'и ремонт автомобилей марки',
-  'Hyundai и Kia в Молдове. '];
+  textArray: string[] = ['Lorem Ipsum is simply dummy text of the',
+  'printing and typesetting',
+  'industry. Lorem Ipsum.'
+  ]
+  // textArray: string[] = ['Профессиональное техническое обслуживание',
+  // 'и ремонт автомобилей марки',
+  // 'Hyundai и Kia в Молдове. '];
   displayText: string = '';
   delay: number = 40;
   index: number = 0;

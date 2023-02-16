@@ -5,11 +5,16 @@
 
 .generalForm {
   display: flex;
-  flex-direction: column;
+  gap: $gap;
+  @include sm {
+    flex-direction: column;
+    gap: 0;
+  }
   .row {
     @extend %row;
   }
-  .col {
-    @extend %col
-  }
+}
+
+mat-form-field {
+  width: 100%;
 }

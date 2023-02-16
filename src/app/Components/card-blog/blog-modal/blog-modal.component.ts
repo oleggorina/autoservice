@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -10,7 +10,6 @@ export class BlogModalComponent {
   images: string[] = [this.data.mainImage, this.data.firstImage, this.data.secondImage, 
                       this.data.thirdImage, this.data.fourthImage, this.data.fifthImage];
   currentIndex: number = 0;
-  
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 

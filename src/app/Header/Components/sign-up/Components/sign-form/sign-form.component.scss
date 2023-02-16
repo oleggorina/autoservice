@@ -4,25 +4,35 @@
 @use "skin" as *;
 
 .signForm {
-  display: flex;
-  margin: $gap;
-  flex-direction: column;
-  .row {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas: "header" "generalForm" "row" "row" "buttons";
+  padding: $gap;
+  @include sm {
+    height: 350px;
+  }
+  &__header {
+    grid-area: header;
+    justify-self: center;
+    font-family: $font-header;
+    font-weight: 500;
+    height: max-content;
+  }
+  &__generalForm {
+    grid-area: generalForm;
+  }
+  &__row {
     @extend %row;
   }
-
-  .col {
-    @extend %col;
-  }
-
-  &__header {
-    font-family: $font-main;
-    text-align: center;
-    font-weight: 700;
-  }
   &__buttons {
+    grid-area: buttons;
     display: flex;
-    gap: $gap;
     justify-content: center;
+    gap: $gap;
   }
+}
+
+mat-form-field {
+  width: 100%;
 }

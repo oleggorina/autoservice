@@ -10,15 +10,13 @@
 }
 
 %row {
-  display: flex;
-    flex-wrap: wrap;
-    margin-right: calc(-.5 * 1.5rem);
-    margin-left: calc(-.5*1.5rem);
-    & > * {
-      width: 100%;
-      max-width: 100%;
-      padding-right: calc(1.5rem * .5);
-      padding-left: calc(1.5rem * .5);
+  grid-area: row;
+    display: flex;
+    gap: $gap;
+    @include sm {
+      flex-direction: column;
+      width: 220px;
+      gap: 0;
     }
 }
 
