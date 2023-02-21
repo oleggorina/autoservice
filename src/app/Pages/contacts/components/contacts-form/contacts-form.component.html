@@ -1,0 +1,19 @@
+<div class="form">
+  <h3 class="form__header">Contact US</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form__generalForm">
+      <app-general-form [header]="formContacts" [generalGroup]="formContacts"></app-general-form>
+    </div>
+    <div [formGroup]="formContacts">
+      <div class="form__row">
+          <mat-form-field appearance="outline">
+            <mat-label>Message</mat-label>
+            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5" cdkAutosizeMaxRows="5"></textarea>
+          </mat-form-field>
+      </div>
+      <div class="form__buttons">
+        <button mat-raised-button color="accent" type="submit">Send</button>
+      </div>
+    </div>
+  </form>
+</div>

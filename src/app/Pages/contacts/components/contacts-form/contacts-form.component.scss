@@ -1,0 +1,23 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: calc($gap / 2);
+  justify-content: center;
+  align-items: center;
+  &__header {
+    font-family: $font-header;
+    font-weight: 500;
+    font-size: 1.5em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}

@@ -1,32 +1,24 @@
 <div [formGroup]="generalGroup">
-  <div formGroupName="header" class="generalForm">
-    <div class="generalForm__row">
-      <div class="generalForm__row-item">
-        <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Name" formControlName="name">
-        </mat-form-field>
-      </div>
-      <div class="generalForm__row-item">
-        <mat-form-field appearance="outline">
-          <mat-label>Surname</mat-label>
-          <input matInput placeholder="Surname" formControlName="surname">
-        </mat-form-field>
-      </div>
+  <div formGroupName="header" class="form">
+    <div class="form__row">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Surname</mat-label>
+        <input matInput placeholder="Surname" formControlName="surname">
+      </mat-form-field>
     </div>
-    <div class="generalForm__row">
-      <div class="generalForm__row-item">
-        <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Email" formControlName="email">
-        </mat-form-field>
-        </div>
-        <div class="generalForm__row-item">
-          <mat-form-field appearance="outline">
-            <mat-label>Phone</mat-label>
-            <input matInput placeholder="Phone" formControlName="phone">
-          </mat-form-field>
-        </div>
-      </div>
+    <div class="form__row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="Phone" formControlName="phone">
+      </mat-form-field>
+    </div>
   </div>
 </div>

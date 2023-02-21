@@ -12,7 +12,6 @@
 %row {
   grid-area: row;
     display: flex;
-    gap: $gap;
     @include sm {
       flex-direction: column;
       width: 220px;

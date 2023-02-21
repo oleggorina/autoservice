@@ -3,18 +3,20 @@
 @use "mixins-media" as *;
 @use "skin" as *;
 
-.generalForm {
+.form {
   display: flex;
-  gap: $gap;
-  @include sm {
-    flex-direction: column;
-    gap: 0;
-  }
-  .row {
-    @extend %row;
+  flex-direction: column;
+  &__row {
+    grid-area: row;
+    display: flex;
+    gap: calc($gap / 2);
+    @include md {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 }
 
 mat-form-field {
-  width: 100%;
+  max-width: 100%;
 }

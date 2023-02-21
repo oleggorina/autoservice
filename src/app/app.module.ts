@@ -39,6 +39,7 @@ import { CardComponent } from './Components/card/card.component';
 import { CardReviewComponent } from './Components/card-review/card-review.component';
 import { CardBlogComponent } from './Components/card-blog/card-blog.component';
 import { BlogModalComponent } from './Components/card-blog/blog-modal/blog-modal.component';
+import { ContactsFormComponent } from './Pages/contacts/components/contacts-form/contacts-form.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { BlogModalComponent } from './Components/card-blog/blog-modal/blog-modal
     CardComponent,
     CardReviewComponent,
     CardBlogComponent,
-    BlogModalComponent
+    BlogModalComponent,
+    ContactsFormComponent
   ],
   imports: [
     BrowserModule,
