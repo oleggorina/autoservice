@@ -24,28 +24,15 @@
     }
     &__item {
       position: absolute;
-      width: 500px;
-      height: 300px;
+      width: 600px;
+      height: 400px;
       transition: all 0.5s;
-      box-shadow: 10px 5px 15px rgba($color: #000000, $alpha: 0.9);
       border: 5px solid $color-light;
-      opacity: 0;
-      @include lg {
-        width: 400px;
-        height: 200px;
-      }
-      @include md {
-        width: 300px;
-      }
-      @include sm {
-        width: 200px;
-        height: 100px;
-      }
+      transform: translate(-50%, -50%);
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        display: block;
       }
     }
   }

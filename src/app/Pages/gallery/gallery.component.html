@@ -1,7 +1,10 @@
 <div class="gallery">
   <div class="slider" #slider>
-    <div class="slider__container">
-      <div class="slider__item"></div>
+    <div class="slider__container" #sliderContainer>
+      <div class="slider__item" #sliderItems *ngFor="let image of images; let i = index"
+      data-id="{{i}}">
+        <img src="{{image.image}}" alt="image{{i+1}}">
+      </div>
     </div>
     <div class="slider__controls"></div>
   </div>
