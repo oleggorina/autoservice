@@ -1,11 +1,17 @@
 <div class="gallery">
   <div class="slider" #slider>
     <div class="slider__container" #sliderContainer>
-      <div class="slider__item" #sliderItems *ngFor="let image of images; let i = index"
-      data-id="{{i}}">
-        <img src="{{image.image}}" alt="image{{i+1}}">
+      <div class="slider__item" #sliderItems *ngFor="let item of images; let i = index"
+      [attr.data-order]="i">
+        <img src="{{item.image}}" alt="image{{i+1}}">
       </div>
     </div>
-    <div class="slider__controls"></div>
+    <div class="slider__controls">
+      <div class="slider__controls-item" #sliderControlPrev>
+        <app-slider-control [buttonText]="'<'" (click)="prev()"></app-slider-control>
+      </div>
+      <div class="slider__controls-item" #sliderControlNext>
+        <app-slider-control [buttonText]="'>'" (click)="next()"></app-slider-control>
+    </div>
   </div>
 </div>
