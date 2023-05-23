@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50px 1fr 50px;
-  grid-template-areas: "header" "generalForm" "row" "row" "buttons";
+  grid-template-areas: "header" "row" "row" "buttons";
   padding: $gap;
   @include sm {
     height: 350px;
@@ -18,9 +18,6 @@
     font-family: $font-header;
     font-weight: 500;
     height: max-content;
-  }
-  &__generalForm {
-    grid-area: generalForm;
   }
   &__row {
     @extend %row;

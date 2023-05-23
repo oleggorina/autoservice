@@ -3,18 +3,30 @@
 @use "mixins-media" as *;
 @use "skin" as *;
 
-.form {
-  display: flex;
-  flex-direction: column;
-  padding: calc($gap / 2);
-  justify-content: center;
-  align-items: center;
+.contactsForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas: "header" "row" "row" "buttons";
+  padding: $gap;
+  @include sm {
+    height: 350px;
+  }
   &__header {
+    grid-area: header;
+    justify-self: center;
     font-family: $font-header;
     font-weight: 500;
-    font-size: 1.5em;
-    letter-spacing: 5px;
-    text-transform: uppercase;
+    height: max-content;
+  }
+  &__row {
+    @extend %row;
+  }
+  &__buttons {
+    grid-area: buttons;
+    display: flex;
+    justify-content: center;
+    gap: $gap;
   }
 }
 

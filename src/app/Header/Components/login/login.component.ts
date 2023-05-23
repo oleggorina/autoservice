@@ -8,6 +8,7 @@ import { LoginFormComponent } from './Components/login-form/login-form.component
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  isLogged: boolean = false;
   constructor(private matDialog: MatDialog) {}
 
   openDialog(): void {

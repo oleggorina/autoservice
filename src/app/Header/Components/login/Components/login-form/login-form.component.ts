@@ -22,7 +22,11 @@ export class LoginFormComponent implements OnInit {
     })
   }
   
-    closeDialog(): void {
+  submitForm(): void {
+    console.log(this.formLogin.value)
+  }
+  
+  closeDialog(): void {
     this.dialogRef.close();
   }
 }

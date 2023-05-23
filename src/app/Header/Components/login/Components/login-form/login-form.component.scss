@@ -5,22 +5,20 @@
 
 .loginForm {
   display: flex;
-    flex-direction: column;
-    margin: $gap;
+  flex-direction: column;
+  margin: $gap;
   &__header {
     text-align: center;
   }
   &__form {
-    .row {
-      @extend %row;
-    }
-    .col {
-      @extend %col;
-    }
-  }
-  &__buttons {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: $gap;
+    padding-bottom: $gap;
+    &-buttons {
+      display: flex;
+      justify-content: center;
+      gap: $gap;
+    }
   }
 }

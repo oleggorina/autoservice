@@ -1,3 +1,4 @@
 <div class="login">
-  <mat-icon (click)="openDialog()">login</mat-icon>
+  <mat-icon *ngIf="!isLogged" (click)="openDialog()">login</mat-icon>
+  <mat-icon *ngIf="isLogged">login</mat-icon>
 </div>

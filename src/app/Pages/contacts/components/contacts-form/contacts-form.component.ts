@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { GeneralFormService } from 'src/app/Services/general-form.service';
 
 @Component({
   selector: 'app-contacts-form',
@@ -12,12 +11,14 @@ export class ContactsFormComponent implements OnInit {
   formContacts!: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
-    private generalFormService: GeneralFormService) {}
+    private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.formContacts = this.fb.group({
-      header: this.generalFormService.generalForm(),
+      name: ['', [Validators.required, Validators.minLength(4)]],
+      surname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
       message: ['', Validators.required]
     })
   }

@@ -40,7 +40,7 @@ export class ServicesComponent implements AfterViewInit {
 
   nextAnimation(): void {
     gsap.from(this.controlNext.nativeElement, {
-      duration: 0.3,
+      duration: 0.5,
       delay: 1.3,
       opacity: 0,
       x: 20

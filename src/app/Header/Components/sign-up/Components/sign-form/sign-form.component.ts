@@ -1,7 +1,6 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
-import { GeneralFormService } from 'src/app/Services/general-form.service';
 
 @Component({
   selector: 'app-sign-form',
@@ -14,12 +13,14 @@ export class SignFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private generalFormService: GeneralFormService,
-    private dialogRef: MatDialogRef<SignFormComponent>) {}
+    private dialogRef: DialogRef<SignFormComponent>) {}
   
   ngOnInit(): void {
     this.formSign = this.fb.group({
-      header: this.generalFormService.generalForm(),
+      name: ['', [Validators.required, Validators.minLength(4)]],
+      surname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
       model: ['', Validators.required],
       year: ['', Validators.required],
       cause: ['', Validators.required]
@@ -30,8 +31,9 @@ export class SignFormComponent implements OnInit {
     this.dialogRef.close();
   }
   
-  onSubmit(): void {
-    console.log(this.formSign.value)
+  submitForm(event: Event): void {
+    event.preventDefault();
+    console.log(this.formSign.value);
   }
 
 }

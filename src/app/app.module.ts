@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { NavbarComponent } from './Navbar/navbar/navbar.component';
-import { GeneralFormComponent } from './Components/Form/general-form/general-form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -40,6 +39,10 @@ import { CardReviewComponent } from './Components/card-review/card-review.compon
 import { CardBlogComponent } from './Components/card-blog/card-blog.component';
 import { BlogModalComponent } from './Components/card-blog/blog-modal/blog-modal.component';
 import { ContactsFormComponent } from './Pages/contacts/components/contacts-form/contacts-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,6 @@ import { ContactsFormComponent } from './Pages/contacts/components/contacts-form
     LoginComponent,
     ContactComponent,
     NavbarComponent,
-    GeneralFormComponent,
     SignFormComponent,
     LoginFormComponent,
     ContactsComponent,
@@ -84,7 +86,10 @@ import { ContactsFormComponent } from './Pages/contacts/components/contacts-form
     MatDialogModule,
     MatTabsModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

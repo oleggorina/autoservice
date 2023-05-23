@@ -11,7 +11,8 @@
 
 %row {
   grid-area: row;
-    display: flex;
+  display: flex;
+  gap: calc($gap / 2);
     @include sm {
       flex-direction: column;
       width: 220px;

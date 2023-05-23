@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "autoservice-36750"
+  },
+  "targets": {
+    "autoservice-36750": {
+      "hosting": {
+        "autoservice": [
+          "autoservice-36750"
+        ]
+      }
+    }
+  }
+}

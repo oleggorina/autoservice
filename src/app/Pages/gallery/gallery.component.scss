@@ -31,6 +31,7 @@
       border: 5px solid $color-light;
       transform: translate(-50%, -50%);
       transition: all 0.5s;
+      animation: imageAnim 0.5s;
       @include lg {
         width: 400px;
         height: 200px;
@@ -57,4 +58,8 @@
       z-index: 50;
     }
   }
+}
+
+@keyframes imageAnim {
+  
 }

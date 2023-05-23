@@ -1,21 +1,53 @@
 <div class="signForm">
   <h3 class="signForm__header">Maintenance record</h3>
-  <form (ngSubmit)="onSubmit()">
-    <div class="signForm__generalForm">
-      <app-general-form [header]="formSign" [generalGroup]="formSign"></app-general-form>
-    </div>
-    <div [formGroup]="formSign">
+  <form [formGroup]="formSign" (ngSubmit)="submitForm($event)">
+      <div class="signForm__row">
+        <div class="signForm__row-item">
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" formControlName="name">
+            <mat-error *ngIf="this.formSign.get('name')?.hasError('required')">Name is required</mat-error>
+            <mat-error *ngIf="this.formSign.get('name')?.hasError('minlength')">Minimum 4 characters</mat-error>
+          </mat-form-field>
+        </div>
+          <div class="signForm__row-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Surname</mat-label>
+              <input matInput placeholder="Surname" formControlName="surname">
+              <mat-error *ngIf="this.formSign.get('surname')?.hasError('required')">Surname is required</mat-error>
+            </mat-form-field>
+          </div>
+      </div>
+      <div class="signForm__row">
+        <div class="signForm__row-item">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="this.formSign.get('email')?.hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="this.formSign.get('email')?.hasError('email')">Wrong format</mat-error>
+          </mat-form-field>
+        </div>
+          <div class="signForm__row-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Phone</mat-label>
+              <input type="number" matInput placeholder="Phone" formControlName="phone">
+              <mat-error *ngIf="this.formSign.get('phone')?.hasError('required')">Phone is required</mat-error>
+            </mat-form-field>
+        </div>
+      </div>
       <div class="signForm__row">
           <div class="signForm__row-item">
             <mat-form-field appearance="outline">
               <mat-label>Car</mat-label>
               <input matInput placeholder="Model" formControlName="model">
+              <mat-error *ngIf="this.formSign.get('model')?.hasError('required')">Model is required</mat-error>
             </mat-form-field>
           </div>
             <div class="signForm__row-item">
               <mat-form-field appearance="outline">
                 <mat-label>Year</mat-label>
-                <input matInput placeholder="Year" formControlName="year">
+                <input type="number" matInput placeholder="Year" formControlName="year">
+                <mat-error *ngIf="this.formSign.get('year')?.hasError('required')">Year is required</mat-error>
               </mat-form-field>
             </div>
         </div>
@@ -23,48 +55,12 @@
         <mat-form-field appearance="outline">
           <mat-label>Cause</mat-label>
           <input matInput placeholder="Cause" formControlName="cause">
+          <mat-error *ngIf="this.formSign.get('cause')?.hasError('required')">Cause is required</mat-error>
         </mat-form-field>
       </div>
+    <div class="signForm__buttons">
+      <button mat-raised-button color="accent" type="submit" [disabled]="formSign.invalid">Send</button>
+      <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
     </div>
   </form>
-  <div class="signForm__buttons">
-    <button mat-raised-button color="accent" type="submit">Send</button>
-    <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
-  </div>
 </div>
-
-
-
-
-<!-- <div class="signForm">
-  <h3 class="signForm__header">Maintenance record</h3>
-  <form (ngSubmit)="onSubmit()">
-    <app-general-form [header]="formSign" [generalGroup]="formSign"></app-general-form>
-    <div [formGroup]="formSign">
-      <div class="signForm__row">
-        <div class="col">
-          <mat-form-field appearance="outline">
-            <mat-label>Car</mat-label>
-            <input matInput placeholder="Model" formControlName="model">
-          </mat-form-field>
-          </div>
-          <div class="col">
-            <mat-form-field appearance="outline">
-              <mat-label>Year</mat-label>
-              <input matInput placeholder="Year" formControlName="year">
-            </mat-form-field>
-          </div>
-        </div>
-      <div class="row">
-        <mat-form-field appearance="outline">
-          <mat-label>Cause</mat-label>
-          <input matInput placeholder="Cause" formControlName="cause">
-        </mat-form-field>
-      </div>
-    </div>
-  </form>
-  <div class="signForm__buttons">
-    <button mat-raised-button color="accent" type="submit">Send</button>
-    <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
-  </div>
-</div> -->
